@@ -10,9 +10,6 @@ describe("Employee", () => {
       expect(err.errors).to.exist;
     });
   });
-  after(() => {
-    mongoose.models = {};
-  });
 
   it("should throw an error if args are not a string", () => {
     const cases = [{}, []];
@@ -23,9 +20,6 @@ describe("Employee", () => {
         expect(err.errors).to.exist;
       });
     }
-  });
-  after(() => {
-    mongoose.models = {};
   });
 
   it("should throw an error when not all args were provided", () => {
@@ -43,9 +37,6 @@ describe("Employee", () => {
         expect(err.errors).to.exist;
       });
     }
-    after(() => {
-      mongoose.models = {};
-    });
   });
 
   it("should not throw an error if args are okay", () => {
@@ -61,8 +52,5 @@ describe("Employee", () => {
         expect(err).to.not.exist;
       });
     }
-  });
-  after(() => {
-    mongoose.models = {};
   });
 });

@@ -10,9 +10,6 @@ describe("Department", () => {
       expect(err.errors.name).to.exist;
     });
   });
-  after(() => {
-    mongoose.models = {};
-  });
 
   it('should throw an error if "name" is not a string', () => {
     const cases = [{}, []];
@@ -23,9 +20,6 @@ describe("Department", () => {
         expect(err.errors.name).to.exist;
       });
     }
-  });
-  after(() => {
-    mongoose.models = {};
   });
 
   it('should throw an error if "name: is too short or too long', () => {
@@ -38,9 +32,6 @@ describe("Department", () => {
       });
     }
   });
-  after(() => {
-    mongoose.models = {};
-  });
 
   it('should not throw an error if "name" is okay', () => {
     const cases = ["Managment", "Human Resources"];
@@ -50,8 +41,5 @@ describe("Department", () => {
         expect(err).to.not.exist;
       });
     }
-  });
-  after(() => {
-    mongoose.models = {};
   });
 });
