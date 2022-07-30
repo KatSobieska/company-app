@@ -14,9 +14,9 @@ describe("Employee", () => {
   it("should throw an error if args are not a string", () => {
     const cases = [{}, []];
     for (let employee of cases) {
-      const dep = new Employee({ employee });
+      const emp = new Employee({ employee });
 
-      dep.validate((err) => {
+      emp.validate((err) => {
         expect(err.errors).to.exist;
       });
     }
